@@ -8,6 +8,7 @@
 * {
     /* border: var(--color-debug) 1px solid; */
     box-sizing: border-box;
+    transition: all 250ms;
 }
 
 body {

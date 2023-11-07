@@ -84,6 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
 $(function () {
     $('theme-toggle').attr('title', 'Change website theme');
     typewriter().then(() => {
-        $('.transparent').animate({opacity: 1}, 500);
+        $('.transparent').animate({opacity: 1}, 750);
     });
 });

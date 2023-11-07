@@ -86,4 +86,9 @@ $(function () {
     typewriter().then(() => {
         $('.transparent').animate({opacity: 1}, 750);
     });
+    if($('.header').classList.contains('hidden')) {
+        $('.content').css('height', '90%');
+        $('.header').css('height', '0%');
+        $('.footer').css('height', '10%');
+    }
 });

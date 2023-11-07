@@ -1,0 +1,240 @@
+/* Basics */
+:root {
+    font-family: var(--monospace-font);
+    height: 100vh;
+    overflow: hidden;
+}
+
+* {
+    /* border: var(--color-debug) 1px solid; */
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    margin: 0;
+    height: 100vh;
+    transition-duration: 250ms;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    padding: 2.5%;
+}
+
+.banner {
+    font-size: 1em;
+    font-family: var(--sans-serif-font);
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+    background-color: var(--color-banner-bg);
+    color: var(--color-banner-fg);
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    height: 80%;
+}
+
+.left {
+    flex: 1;
+    padding: 20px;
+    order: var(--left-order);
+}
+
+.center {
+    display: flex;
+    flex: 5;
+    padding: 20px;
+    order: var(--center-order);
+    font-size: 1.25em;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+}
+
+.socials h4 {
+    font-family: var(--sans-serif-font);
+    font-size: 1.25em;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.social-icons a {
+    font-size: 2em;
+    margin: 0 0.5em;
+    transition-duration: 250ms;
+    color: var(--color-fg);
+    text-decoration: none;
+}
+
+.socials a:hover {
+    color: var(--color-hover);
+    cursor: pointer;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#typewriter {
+    font-family: var(--sans-serif-font);
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+
+.right {
+    flex: 1;
+    padding: 20px;
+    order: var(--right-order);
+}
+
+.footer {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: 10%;
+    padding: 2.5%;
+    overflow: hidden;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: flex-start;
+    font-size: 0.85em;
+}
+
+.contact-info p {
+    margin: 0;
+}
+.contact-info a {
+    color: var(--color-fg);
+    text-decoration: none;
+    transition-duration: 250ms;
+}
+#contact-intro {
+    font-family: var(--sans-serif-font);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+#resume_link {
+    font-family: var(--sans-serif-font);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    color: var(--color-resume-link);
+    text-decoration: none;
+    transition-duration: 250ms;
+    cursor: pointer;
+}
+
+#theme-toggle {
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--icon-color);
+    transition-duration: 250ms;
+}
+
+.hidden {
+    display: none;
+}
+.transparent {
+    opacity: 0;
+}
+
+a:hover, #theme-toggle:hover {
+    color: var(--color-hover);
+}
+
+/* Colors */
+[data-theme="light"] {
+    --color-bg: #efefef;
+    --color-fg: rgb(0, 6, 12);
+    --color-banner-bg: #a51717;
+    --color-banner-fg: #fff;
+    --icon-color: #000;
+    --color-hover: rgb(0, 85, 188);
+    --color-resume-link: rgb(0, 53, 118);
+
+    --color-debug: rgba(255, 0, 0, 100);
+}
+[data-theme="dark"] {
+    --color-bg: rgb(0, 6, 12);
+    --color-fg: #fff;
+    --color-banner-bg: #a51717;
+    --color-banner-fg: #fff;
+    --icon-color: #fff;
+    --color-hover: rgb(16, 140, 178);
+    --color-resume-link: rgb(62, 149, 255);
+
+    --color-debug: rgba(0, 0, 255, 100);
+}
+
+/* Typography */
+* {
+    --sans-serif-font: 'Gabarito', sans-serif;
+    --monospace-font: 'Inconsolata', monospace;
+}
+
+.sans {
+    font-family: var(--sans-serif-font);
+}
+.mono {
+    font-family: var(--monospace-font);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    .left {
+        order: 2;
+    }
+    .center {
+        order: 1;
+    }
+    .right {
+        order: 3;
+    }
+}
+
+@media (min-width: 769px) {
+    .content {
+        flex-direction: row;
+    }
+    .left {
+        order: 1;
+    }
+    .center {
+        order: 2;
+    }
+    .right {
+        order: 3;
+    }
+}

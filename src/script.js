@@ -84,6 +84,11 @@ $(function() {
         localStorage.setItem("preferredTheme", theme);
     });
 
+    $('#theme-toggle').longpress(2000, function() {
+        localStorage.removeItem("preferredTheme");
+        location.reload();
+    });
+
     // add a change event listener to the system setting
     systemSettingDark.addEventListener("change", () => {
         const localStorageTheme = localStorage.getItem("preferredTheme");

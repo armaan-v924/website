@@ -162,14 +162,6 @@ $(function() {
         localStorage.setItem("preferredTheme", currentTheme);
     });
 
-    // add a longpress event listener
-    theme_button.longpress(2000, function() {
-        // remove the local storage
-        localStorage.removeItem("preferredTheme");
-        // reload the page
-        location.reload();
-    });
-
     // add a change event listener to the system setting
     systemSettingDark.addEventListener("change", () => {
         // if the setting hasn't been toggled

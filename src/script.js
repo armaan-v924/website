@@ -2,7 +2,7 @@ var theme;
 const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
 
 function setThemeOnLoad() {
-    const localTheme = localStorage.getItem("theme");
+    const localTheme = localStorage.getItem("preferredTheme");
     if(localTheme === null) {
         theme = systemSettingDark.matches ? "dark" : "light";
     } else {
@@ -81,12 +81,12 @@ $(function() {
     // add a click event listener to the button
     $("#theme-toggle").click(function() {
         toggleTheme(theme);
-        localStorage.setItem("theme", theme);
+        localStorage.setItem("preferredTheme", theme);
     });
 
     // add a change event listener to the system setting
     systemSettingDark.addEventListener("change", () => {
-        const localStorageTheme = localStorage.getItem("theme");
+        const localStorageTheme = localStorage.getItem("preferredTheme");
         if(localStorageTheme === null) {
             const newTheme = systemSettingDark.matches ? "dark" : "light";
             toggleTheme();

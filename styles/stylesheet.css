@@ -232,6 +232,9 @@ a:hover, .icons i:hover {
     .contact-info {
         font-size: 0.5em;
     }
+    .footer-text {
+        font-size: 0.75em;
+    }
 }
 
 @media (min-width: 769px) {

@@ -43,7 +43,6 @@ function typewriter() {
                 i++;
                 setTimeout(type, speed);
             } else {
-                document.getElementById("cursor").style.opacity = "0";
                 setTimeout(() => {
                     resolve();
                 }, 1000); 
@@ -88,7 +87,8 @@ $(function () {
     $('theme-toggle').attr('title', 'Change website theme');
     typewriter().then(() => {
         $('.transparent').animate({opacity: 1}, 750);
-        $('#cursor').fadeOut();
+        $('#cursor').css('animation', 'none');
+        $('#cursor').fadeOut(750);
     });
     if($('.header').classList.contains('hidden')) {
         $('.content').css('height', '90%');

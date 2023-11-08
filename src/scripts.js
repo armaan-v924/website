@@ -80,16 +80,28 @@ document.addEventListener('DOMContentLoaded', function() {
             const newTheme = systemSettingDark.matches ? "dark" : "light";
             toggleTheme({ newTheme, button });
         }
+    });
+    const animationReload = document.getElementById('replay_animation');
+    animationReload.addEventListener('click', function() {
+        localStorage.removeItem('animationPlayed');
+        location.reload();
     });    
 });
 
 $(function () {
     $('theme-toggle').attr('title', 'Change website theme');
-    typewriter().then(() => {
-        $('.transparent').animate({opacity: 1}, 750);
-        $('#cursor').css('animation', 'none');
-        $('#cursor').fadeOut(750);
-    });
+    if(localStorage.getItem('animationPlayed') === 'true') {
+        $('#text').html('Hi! I\'m Armaan,');
+        $('.transparent').css('opacity', '1');
+        $('#cursor').css('display', 'none');
+    } else {
+        typewriter().then(() => {
+            $('.transparent').animate({opacity: 1}, 750);
+            $('#cursor').css('animation', 'none');
+            $('#cursor').fadeOut(750);
+        });
+        localStorage.setItem('animationPlayed', 'true');
+    }
     if($('.header').classList.contains('hidden')) {
         $('.content').css('height', '90%');
         $('.header').css('height', '0%');

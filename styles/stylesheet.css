@@ -143,6 +143,7 @@ body {
     font-family: var(--sans-serif-font);
     font-weight: bold;
     letter-spacing: 0.1em;
+    font-size: 1em;
 }
 
 #resume_link {
@@ -155,8 +156,7 @@ body {
     cursor: pointer;
 }
 
-#theme-toggle {
-    font-size: 1.5em;
+.icons i {
     cursor: pointer;
     color: var(--icon-color);
     transition-duration: 250ms;
@@ -169,7 +169,7 @@ body {
     opacity: 0;
 }
 
-a:hover, #theme-toggle:hover {
+a:hover, .icons i:hover {
     color: var(--color-hover);
 }
 

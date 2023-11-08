@@ -52,14 +52,12 @@ body {
 .left {
     flex: 1;
     padding: 20px;
-    order: var(--left-order);
 }
 
 .center {
     display: flex;
     flex: 5;
     padding: 20px;
-    order: var(--center-order);
     font-size: 1.25em;
     justify-content: space-between;
     flex-direction: column;
@@ -109,7 +107,6 @@ body {
 .right {
     flex: 1;
     padding: 20px;
-    order: var(--right-order);
 }
 
 .footer {
@@ -124,7 +121,6 @@ body {
 }
 
 .footer-text {
-    align-items: left;
     text-align: left;
 }
 

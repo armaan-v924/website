@@ -1,34 +1,54 @@
-var theme;
 const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+let currentTheme;
+
+let theme_button;
+let cursor;
+let replay_button;
+let greeting_text;
+let transparent_objects;
+let javascript_not_enabled_warning;
+let contact_links;
+let banner;
 
 function setThemeOnLoad() {
     const localTheme = localStorage.getItem("preferredTheme");
     if(localTheme === null) {
-        theme = systemSettingDark.matches ? "dark" : "light";
+        currentTheme = systemSettingDark.matches ? "dark" : "light";
     } else {
-        theme = localTheme;
+        currentTheme = localTheme;
     }
 
-    document.querySelector("html").setAttribute("data-theme", theme);
+    document.querySelector("html").setAttribute("data-theme", currentTheme);
 
-    const icon = theme === "dark" ? "fa-sun" : "fa-moon";
-    const aria = theme === "dark" ? "Change to light mode" : "Change to dark mode";
-    $("#theme-toggle").toggleClass(icon);
-    $("#theme-toggle").attr("aria-label", aria);
+    const icon = currentTheme === "dark" ? "fa-sun" : "fa-moon";
+    const aria = currentTheme === "dark" ? "Change to light mode" : "Change to dark mode";
+    theme_button.toggleClass(icon);
+    theme_button.attr("aria-label", aria);
 }
 
 function toggleTheme() {
-    const newTheme = theme === "dark" ? "light" : "dark";
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
     document.querySelector("html").setAttribute("data-theme", newTheme);
-    $("#theme-toggle").toggleClass("fa-sun fa-moon");
-    $("#theme-toggle").attr("aria-label", `Change to ${newTheme} mode`);
-    theme = newTheme;
+    theme_button.toggleClass("fa-sun fa-moon");
+    theme_button.attr("aria-label", `Change to ${newTheme} mode`);
+    currentTheme = newTheme;
+}
+
+function setTheme(newTheme) {
+    $("html").attr("data-theme", newTheme);
+    let currentIcon = currentTheme === "dark" ? "fa-sun" : "fa-moon";
+    let newIcon = newTheme === "dark" ? "fa-sun" : "fa-moon";
+    theme_button.toggleClass(currentIcon);
+    theme_button.toggleClass(newIcon);
+    theme_button.attr("aria-label", `Change to ${newTheme} mode`);
+    currentTheme = newTheme;
 }
 
 function typewriter() {
-    var i = 0;
-    var txt = 'Hi! I\'m Armaan,';
-    var speed = 75;
+    let i = 0;
+    let txt = 'Hi! I\'m Armaan,';
+    let speed = 75;
     return new Promise((resolve) => {
         function type() {
             if(i < txt.length) {
@@ -48,30 +68,39 @@ function typewriter() {
 function typeAnimation() {
     typewriter().then(() => {
         $('.transparent').animate({opacity: 1}, 750);
-        $('#cursor').css('animation', 'none');
-        $('#cursor').fadeOut(750);
+        cursor.css('animation', 'none');
+        cursor.fadeOut(750);
         sessionStorage.setItem('animationPlayed', 'true');
     });
 }
 
 $(function() {
+    cursor = $('#cursor');
+    theme_button = $('#theme-toggle');
+    replay_button = $('#replay_animation');
+    greeting_text = $('#text');
+    transparent_objects = $('.transparent');
+    javascript_not_enabled_warning = $('#noscriptmsg');
+    contact_links = $('.social-icon').children();
+    banner = $('.banner');
+
     // on page load
-    $('#text').html("");
-    $('#noscriptmsg').css('display', 'none');
-    $('.transparent').css('opacity', '0');
-    $('#cursor').css('opacity', '1');
-    $('#cursor').css('animation', 'blink 1s infinite');
-    $('#cursor').css('-webkit-animation', 'blink 1s infinite');
-    $('.social-icon').children().html("");
+    greeting_text.html("");
+    javascript_not_enabled_warning.css('display', 'none');
+    transparent_objects.css('opacity', '0');
+    cursor.css('opacity', '1');
+    cursor.css('animation', 'blink 1s infinite');
+    cursor.css('-webkit-animation', 'blink 1s infinite');
+    contact_links.html("");
 
     // set the initial theme
     setThemeOnLoad();
 
     // if the animation has already been played, skip it
     if(sessionStorage.getItem("animationPlayed") === "true") {
-        $("#text").html("Hi! I'm Armaan,");
-        $(".transparent").css("opacity", "1");
-        $("#cursor").css("display", "none");
+        greeting_text.html("Hi! I'm Armaan,");
+        transparent_objects.css("opacity", "1");
+        cursor.css("display", "none");
     } else {
         setTimeout(() => {
             typeAnimation();
@@ -79,33 +108,32 @@ $(function() {
     }
 
     // add a click event listener to the button
-    $("#theme-toggle").click(function() {
-        toggleTheme(theme);
-        localStorage.setItem("preferredTheme", theme);
+    theme_button.click(function() {
+        toggleTheme(currentTheme);
+        localStorage.setItem("preferredTheme", currentTheme);
     });
 
-    $('#theme-toggle').longpress(2000, function() {
+    theme_button.longpress(2000, function() {
         localStorage.removeItem("preferredTheme");
         location.reload();
     });
 
     // add a change event listener to the system setting
     systemSettingDark.addEventListener("change", () => {
-        const localStorageTheme = localStorage.getItem("preferredTheme");
-        if(localStorageTheme === null) {
+        if(localStorage.getItem("preferredTheme") === null) {
             const newTheme = systemSettingDark.matches ? "dark" : "light";
-            toggleTheme();
+            setTheme(newTheme);
         }
     });
 
     // add a click event listener to the replay animation button
-    $("#replay_animation").click(function() {
+    replay_button.click(function() {
         sessionStorage.removeItem("animationPlayed");
-        $("#text").html("");
-        $('#cursor').css('display', 'inline');
-        $('#cursor').css('animation', 'blink 1s infinite');
-        $('#cursor').css('-webkit-animation', 'blink 1s infinite');
-        $('.transparent').css('opacity', '0');
+        greeting_text.html("");
+        cursor.css('display', 'inline');
+        cursor.css('animation', 'blink 1s infinite');
+        cursor.css('-webkit-animation', 'blink 1s infinite');
+        transparent_objects.css('opacity', '0');
         setTimeout(() => {
             typeAnimation();
         }, 1000);

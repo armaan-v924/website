@@ -176,9 +176,9 @@ a:hover, .icons i:hover {
 [data-theme="light"] {
     --color-bg: #efefef;
     --color-fg: rgb(0, 6, 12);
-    --color-banner-bg: #a51717;
-    --color-banner-fg: #fff;
-    --icon-color: #000;
+    --color-banner-bg: #1790a5;
+    --color-banner-fg: rgb(0, 6, 12);
+    --icon-color: rgb(0, 6, 12);
     --color-hover: rgb(0, 85, 188);
     --color-resume-link: rgb(0, 53, 118);
 
@@ -187,7 +187,7 @@ a:hover, .icons i:hover {
 [data-theme="dark"] {
     --color-bg: rgb(0, 6, 12);
     --color-fg: #fff;
-    --color-banner-bg: #a51717;
+    --color-banner-bg: #004049;
     --color-banner-fg: #fff;
     --icon-color: #fff;
     --color-hover: rgb(16, 140, 178);

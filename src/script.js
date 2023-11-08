@@ -101,6 +101,13 @@ $(function() {
     // add a click event listener to the replay animation button
     $("#replay_animation").click(function() {
         sessionStorage.removeItem("animationPlayed");
-        location.reload();
+        $("#text").html("");
+        $('#cursor').css('display', 'inline');
+        $('#cursor').css('animation', 'blink 1s infinite');
+        $('#cursor').css('-webkit-animation', 'blink 1s infinite');
+        $('.transparent').css('opacity', '0');
+        setTimeout(() => {
+            typeAnimation();
+        }, 1000);
     });
 });

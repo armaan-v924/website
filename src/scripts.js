@@ -39,11 +39,14 @@ function typewriter() {
     return new Promise((resolve) => {
         function type() {
             if(i < txt.length) {
-                document.getElementById("typewriter").innerHTML += txt.charAt(i);
+                document.getElementById("text").innerHTML += txt.charAt(i);
                 i++;
                 setTimeout(type, speed);
             } else {
-                resolve();
+                document.getElementById("cursor").style.opacity = "0";
+                setTimeout(() => {
+                    resolve();
+                }, 1000); 
             }
         }
         type();
@@ -85,6 +88,7 @@ $(function () {
     $('theme-toggle').attr('title', 'Change website theme');
     typewriter().then(() => {
         $('.transparent').animate({opacity: 1}, 750);
+        $('#cursor').fadeOut();
     });
     if($('.header').classList.contains('hidden')) {
         $('.content').css('height', '90%');

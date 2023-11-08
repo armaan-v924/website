@@ -65,9 +65,11 @@ body {
     flex-direction: column;
 }
 
-.social-icons {
+.socials {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .socials h4 {
@@ -77,24 +79,24 @@ body {
     letter-spacing: 0.05em;
 }
 
+.social-icons {
+    font-family: var(--sans-serif-font);
+    display: flex;
+    flex-direction: row;
+}
+
 .social-icons a {
+    color: var(--color-fg);
+    text-decoration: none;  
+}
+
+.social-icon {
+    color: var(--color-hover);
+    cursor: pointer;
     font-size: 2em;
     margin: 0 0.5em;
     transition-duration: 250ms;
-    color: var(--color-fg);
-    text-decoration: none;
-}
-
-.socials a:hover {
-    color: var(--color-hover);
-    cursor: pointer;
-}
-
-.socials {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    
 }
 
 #typewriter {
@@ -103,7 +105,6 @@ body {
     font-weight: bold;
     letter-spacing: 0.125em;
 }
-
 
 .right {
     flex: 1;
@@ -122,38 +123,23 @@ body {
     overflow: hidden;
 }
 
-.contact-info {
-    display: flex;
-    flex-direction: column;
+.footer-text {
+    align-items: left;
     text-align: left;
-    justify-content: flex-start;
-    font-size: 0.85em;
-
 }
 
-.contact-info p {
+.footer-text p {
     margin: 0;
-}
-.contact-info a {
-    color: var(--color-fg);
-    text-decoration: none;
-    transition-duration: 250ms;
-}
-#contact-intro {
     font-family: var(--sans-serif-font);
     font-weight: bold;
     letter-spacing: 0.1em;
     font-size: 1em;
 }
 
-#resume_link {
-    font-family: var(--sans-serif-font);
-    font-weight: bold;
-    letter-spacing: 0.1em;
-    color: var(--color-resume-link);
+.footer-text a {
+    color: var(--color-fg);
     text-decoration: none;
     transition-duration: 250ms;
-    cursor: pointer;
 }
 
 .icons i {
@@ -165,18 +151,15 @@ body {
 .hidden {
     display: none;
 }
-.transparent {
-    opacity: 0;
-}
 
 a:hover, .icons i:hover {
     color: var(--color-hover);
 }
 
 #cursor {
-    animation: blink 750ms infinite;
-    -webkit-animation: blink 750ms infinite;
+    opacity: 0;
 }
+
 @keyframes blink {
     0% {
         opacity: 1;

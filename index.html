@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="src/scripts.js"></script>
+    <script src="src/script.js"></script>
     <script src="https://kit.fontawesome.com/e98ae41517.js" crossorigin="anonymous"></script>
 </head>
 <body class="">
@@ -24,13 +24,13 @@
 
         </div>
         <div class="banner hidden">
-            <p>This page is still under construction.</p>
+            <p>This website relies on JavaScript to work correctly.</p>
         </div>
         <div class="content">
             <div class="center">
                 <div class="intro-text">
                     <div id="typewriter">
-                        <span id="text"></span>
+                        <span id="text">Hi! I'm Armaan,</span>
                         <span id="cursor">|</span>
                     </div>
                     <p class="transparent">An Electrical and Computer Engineering student at UT Austin, currently looking for an internship for Summer 2024.</p>
@@ -41,9 +41,9 @@
                 <div class="socials transparent">
                     <h4 class="transparent">Let's get in touch!</h4>
                     <div class="social-icons">
-                        <a class="fa-brands fa-linkedin" href="https://www.linkedin.com/in/armaan-vakharia/" title="Check out my LinkedIn"></a>
-                        <a class="fa-brands fa-github" href="https://github.com/armaan-v924" title="Check out my GitHub"></a>
-                        <a class="fa-solid fa-envelope" href="mailto:armaan@armaanv.com" title="Send me an email"></a>
+                        <span class="social-icon"><a class="fa-brands fa-linkedin" href="https://www.linkedin.com/in/armaan-vakharia/" title="Check out my LinkedIn">LinkedIn</a></span>
+                        <span class="social-icon"><a class="fa-brands fa-github" href="https://github.com/armaan-v924" title="Check out my GitHub">GitHub</a></span>
+                        <span class="social-icon"><a class="fa-solid fa-envelope" href="mailto:armaan@armaanv.com" title="Send me an email">Email</a></span>
                     </div>
                 </div>
             </div>
@@ -59,8 +59,9 @@
                 <i class="fa-solid" id="theme-toggle" aria-label="Change to dark theme" title="Change website theme"></i>
                 <i class="fa-solid fa-rotate-right" id="replay_animation" aria-label="Replay animation" title="Replay animation"></i>
             </div>
-            <div class="contact-info">            
-                <p class="" id="contact-intro">You can find my resume by clicking <a href=data/resume.pdf d="resume_link">here</a>.</p>
+            <div class="footer-text">            
+                <p id="resume">Download my resume by clicking <a href=data/resume.pdf title="Download my resume">here</a>.</p>
+                <p id="noscriptmsg">This website relies on JavaScript to work correctly.</p>
             </div>
     </div>
 </body>

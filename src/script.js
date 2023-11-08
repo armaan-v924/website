@@ -80,7 +80,7 @@ function typewriter() {
             // while incomplete
             if(i < txt.length) {
                 // append next character
-                $('#text').append(txt.charAt(i));
+                greeting_text.append(txt.charAt(i));
                 // increment index
                 i++;
                 // wait for timeout
@@ -102,10 +102,11 @@ function typeAnimation() {
     // wait for typewriter to complete
     typewriter().then(() => {
         // fade in transparent objects
-        transparent_objects.animate({opacity: 1}, 750);
-        // hide the cursor
+        $('.intro-text p').animate({opacity: 1}, 500);
+        $('.socials').delay(500).animate({opacity: 1}, 500);
+        $('.footer').delay(500).animate({opacity: 1}, 500);
         cursor.css('animation', 'none');
-        cursor.fadeOut(750);
+        cursor.fadeOut(500);
         // save state in session storage
         sessionStorage.setItem('animationPlayed', 'true');
     });

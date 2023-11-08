@@ -174,8 +174,8 @@ a:hover, #theme-toggle:hover {
 }
 
 #cursor {
-    animation: blink 1s infinite;
-    -webkit-animation: blink 1s infinite;
+    animation: blink 750ms infinite;
+    -webkit-animation: blink 750ms infinite;
 }
 @keyframes blink {
     0% {

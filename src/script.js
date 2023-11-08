@@ -50,7 +50,7 @@ function typeAnimation() {
         $('.transparent').animate({opacity: 1}, 750);
         $('#cursor').css('animation', 'none');
         $('#cursor').fadeOut(750);
-        localStorage.setItem('animationPlayed', 'true');
+        sessionStorage.setItem('animationPlayed', 'true');
     });
 }
 
@@ -68,7 +68,7 @@ $(function() {
     setThemeOnLoad();
 
     // if the animation has already been played, skip it
-    if(localStorage.getItem("animationPlayed") === "true") {
+    if(sessionStorage.getItem("animationPlayed") === "true") {
         $("#text").html("Hi! I'm Armaan,");
         $(".transparent").css("opacity", "1");
         $("#cursor").css("display", "none");
@@ -95,7 +95,7 @@ $(function() {
 
     // add a click event listener to the replay animation button
     $("#replay_animation").click(function() {
-        localStorage.removeItem("animationPlayed");
+        sessionStorage.removeItem("animationPlayed");
         location.reload();
     });
 });

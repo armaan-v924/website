@@ -75,16 +75,20 @@ small {font-size: 0.750rem; /* 12px */}
 /* Basic Layout */
 :root {
     height: 100vh;
+    width: 100vw;
 }
 
 body {
     background-color: var(--background);
     margin: 0;
     height: 100%;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .container {
     min-height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;

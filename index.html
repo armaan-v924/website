@@ -31,7 +31,7 @@
             </div>
 
             <!-- ALERT BANNER (Hidden by default) -->
-            <div class="banner"> <!-- TODO: Add hidden tag -->
+            <div class="banner hidden">
                 <h5>This page requires JavaScript to work correctly.</h5>
             </div>
 
@@ -81,7 +81,7 @@
 
             <!-- FOOTER -->
             <div class="footer">
-                <div class="footer-section" id="messages">
+                <div class="footer-section" id="buttons">
                     <div id="resume-download">
                         <a class="link" href="resources/files/resume.pdf" title="Download my Resumé">
                             <svg preserveAspectRatio="xMidYMid meet" class="icon">
@@ -91,17 +91,20 @@
                         </a>
                     </div>
                 </div>
-                <div class="footer-section hidden" id="page-control">
-                    <span id="replay-animation" title="Replay animation">
-                        <svg preserveAspectRatio="xMidYMid meet" class="icon standard" id="replay-animation-icon" title="Replay animation">
-                            <use xlink:href="resources/icons/spinner-arrow.svg#spinner-arrow"></use>
-                        </svg>
-                    </span>
-                    <span id="switch-theme" title="Switch color theme">
-                        <svg preserveAspectRatio="xMidYMid meet" class="icon standard" id="switch-theme-icon" title="Switch color theme">
-                            <use xlink:href="resources/icons/sun.svg#dark-mode"></use>
-                        </svg>
-                    </span>
+                <div class="footer-section" id="page-control">
+                        <span class="page-controller hidden" id="replay-animation" title="Replay animation">
+                            <svg preserveAspectRatio="xMidYMid meet" class="icon standard" id="replay-animation-icon" title="Replay animation">
+                                <use xlink:href="resources/icons/spinner-arrow.svg#spinner-arrow"></use>
+                            </svg>
+                        </span>
+                        <span class="page-controller hidden" id="switch-theme" title="Switch color theme">
+                            <svg preserveAspectRatio="xMidYMid meet" class="icon standard" id="switch-theme-icon" title="Switch color theme">
+                                <use xlink:href="resources/icons/sun.svg#dark-mode"></use>
+                            </svg>
+                        </span>
+                        <noscript>
+                            <p class="noscriptmessage small">This page requires JavaScript to work correctly.</p>
+                        </noscript>
                 </div>
             </div>
         </div>

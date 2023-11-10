@@ -15,7 +15,7 @@ let socials = $('.socials');
 let footer = $('.footer');
 let banner = $('.banner');
 let greeting = $('#greeting');
-let page_control = $('#page-control');
+let page_control = $('.page-controller');
 
 const greeting_text = 'Hi! I\'m <span id="name">Armaan</span>,';
 
@@ -95,7 +95,6 @@ function replayAnimation() {
 }
 
 function prepareJavaScript() {
-    banner.toggleClass('hidden');
     page_control.toggleClass('hidden');
     cursor.toggleClass('blinking');
 }

@@ -217,7 +217,7 @@ body {
     text-align: right;
     flex-direction: row-reverse;
 }
-#messages {
+#buttons {
     text-align: left;
     flex-direction: column;
     justify-content: center;
@@ -272,6 +272,9 @@ body {
 #page-control .icon:hover {
     transform: scale(1.1);
     filter: drop-shadow(0 0 0.75rem var(--accent));
+}
+.noscriptmessage {
+    margin-right: 1rem;
 }
 
 /* Animations */

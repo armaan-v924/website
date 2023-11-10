@@ -1,72 +1,109 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" data-theme="dark">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Armaan Vakharia</title>
+        <title>Armaan Vakharia</title>
 
-    <link rel="icon" href="data/favicon.svg">
-    <link rel="mask-icon" href="data/mask-favicon.svg" color="#000000">
-    <link rel="apple-touch-icon" href="data/apple-touch-icon.png">
+        <!-- Icons -->
+        <link rel="icon" href="resources/icons/logo-favicon.svg">
+        <link rel="mask-icon" href="resources/icons/logo-mask-icon.svg" color="#000000">
+        <link rel="apple-touch-icon" href="resources/icons/logo-touch-icon.png">
 
-    <link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <!-- Custom Styles -->
+        <link rel="stylesheet" href="css/style.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/e98ae41517.js" crossorigin="anonymous"></script>
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <script src="src/script.js"></script>
-</head>
-<body class="">
-    <div class="container">
-        <div class="header">
+        <!-- Scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="js/script.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            <!-- HEADER -->
+            <div class="header transparent">
+                <p>[Header] Placeholder text</p>
+            </div>
 
-        </div>
-        <div class="banner hidden">
-            <p>The page will now respond to your system theme.</p>
-        </div>
-        <div class="content">
-            <div class="center">
-                <div class="intro-text">
-                    <div id="typewriter">
-                        <span id="text">Hi! I'm Armaan,</span>
-                        <span id="cursor">|</span>
+            <!-- ALERT BANNER (Hidden by default) -->
+            <div class="banner"> <!-- TODO: Add hidden tag -->
+                <h5>This page requires JavaScript to work correctly.</h5>
+            </div>
+
+            <!-- PAGE CONTENT -->
+            <div class="primary-content">
+                <div class="center">
+                    <div class="intro typewriter heading1">
+                        <span id="greeting">
+                            Hi! I'm 
+                            <span id="name">Armaan</span>
+                            ,
+                        </span>
+                        <span id="cursor" class="hidden">|</span>
                     </div>
-                    <p class="transparent">An Electrical and Computer Engineering student at UT Austin, currently looking for an internship for Summer 2024.</p>
-                    <p class="transparent">My interests include software research and development, especially in machine learning.</p>
-                    <p class="transparent">I'm well versed with Python, Java, C/C++, and HTML/CSS, and I'm currently working on learning C# and Swift.</p>
-                    <p class="transparent">Most recently, I was working as an iOS Technical Support agent at Apple, supporting iPhones, iPads, Apple Watches, and AirPods.</p>
-                </div>
-                <span class="spacer"></span>
-                <div class="socials transparent">
-                    <h4 class="">Let's get in touch!</h4>
-                    <div class="social-icons">
-                        <span class="social-icon"><a class="fa-brands fa-linkedin" href="https://www.linkedin.com/in/armaan-vakharia/" title="Check out my LinkedIn">LinkedIn</a></span>
-                        <span class="social-icon"><a class="fa-brands fa-github" href="https://github.com/armaan-v924" title="Check out my GitHub">GitHub</a></span>
-                        <span class="social-icon"><a class="fa-solid fa-envelope" href="mailto:armaan@armaanv.com" title="Send me an email">Email</a></span>
+                    <div class="bio">
+                        <p class="bio-paragraph">An Electrical and Computer Engineering student at UT Austin, currently looking for an internship for Summer 2024.</p>
+                        <p class="bio-paragraph">My interests include software research and development, especially in machine learning.</p>
+                        <p class="bio-paragraph">I'm well versed with Python, Java, C/C++, and HTML/CSS, and I'm currently working on learning C# and Swift.</p>
+                        <p class="bio-paragraph">Most recently, I was working as an iOS Technical Support agent at Apple, supporting iPhones, iPads, Apple Watches, and AirPods.</p>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="socials">
+                        <h4 id="call-to-action">Let's get in touch!</h4>
+                        <div class="social-icons">
+                            <a class="link" href="https://www.linkedin.com/in/armaan-vakharia/" target="_blank" title="Connect with me on LinkedIn">
+                                <svg preserveAspectRatio="xMidYMid meet" class="icon" id="linkedin-icon">
+                                    <use xlink:href="resources/icons/linkedin-original.svg#linkedin"></use>
+                                </svg>
+                            </a>
+                            <a class="link" href="https://github.com/armaan-v924" target="_blank" title="Check out my GitHub">
+                                <svg preserveAspectRatio="xMidYMid meet" class="icon" id="github-icon">
+                                    <use xlink:href="resources/icons/github-original.svg#github"></use>
+                                </svg>
+                            <a class="link" href="mailto:armaan@armaanv.com" title="Send me an email">
+                                <svg preserveAspectRatio="xMidYMid meet" class="icon" id="email-icon">
+                                    <use xlink:href="resources/icons/envelope.svg#email"></use>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
+                <div class="left">
+                </div>
+                <div class="right">
+                </div>
             </div>
-            <div class="left">
 
-            </div>
-            <div class="right">
-
+            <!-- FOOTER -->
+            <div class="footer">
+                <div class="footer-section" id="messages">
+                    <div id="resume-download">
+                        <a class="link" href="resources/files/resume.pdf" title="Download my Resumé">
+                            <svg preserveAspectRatio="xMidYMid meet" class="icon">
+                                <use xlink:href="resources/icons/download.svg#download"></use>
+                            </svg>
+                            Download my Resumé
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section hidden" id="page-control">
+                    <span id="replay-animation">
+                        <svg preserveAspectRatio="xMidYMid meet" class="icon standard" id="replay-animation-icon" title="Replay animation">
+                            <use xlink:href="resources/icons/spinner-arrow.svg#spinner-arrow"></use>
+                        </svg>
+                    </span>
+                    <span id="switch-theme">
+                        <svg preserveAspectRatio="xMidYMid meet" class="icon standard" id="switch-theme-icon" title="Switch color theme">
+                            <use xlink:href="resources/icons/sun.svg#dark-mode"></use>
+                        </svg>
+                    </span>
+                </div>
             </div>
         </div>
-        <div class="footer transparent">
-            <div class="icons">
-                <i class="fa-solid" id="theme-toggle" aria-label="Change to dark theme" title="Change website theme."></i>
-                <i class="fa-solid fa-rotate-right" id="replay_animation" aria-label="Replay animation" title="Replay animation"></i>
-            </div>
-            <div class="footer-text">            
-                <p id="resume">Download my resume by clicking <a href=data/resume.pdf title="Download my resume">here</a>.</p>
-                <p id="noscriptmsg">This website relies on JavaScript to work correctly.</p>
-            </div>
-        </div>
-    </div>
-</body>
+    </body>
 </html>

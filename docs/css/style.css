@@ -267,7 +267,7 @@ body {
     margin-right: 1rem;
 }
 #page-control .icon:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) translateZ(0);
     filter: drop-shadow(0 0 0.75rem var(--accent));
 }
 .noscriptmessage {

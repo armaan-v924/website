@@ -74,8 +74,8 @@ small {font-size: 0.750rem; /* 12px */}
 
 /* Basic Layout */
 :root {
-    height: 100vh;
-    width: 100vw;
+    height: 100dvh;
+    width: 100dvw;
     transition-duration: 1000ms;
 }
 
@@ -134,7 +134,7 @@ body {
     height: 75%;
 }
 .spacer {
-    height: 5vh;
+    height: 5dvh;
     box-sizing: border-box;
 }
 .socials {

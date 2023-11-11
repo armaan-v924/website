@@ -18,8 +18,8 @@ let greeting = $('#greeting');
 let page_control = $('.page-controller');
 
 const greeting_text = 'Hi! I\'m <span id="name">Armaan</span>,';
-const dark_theme_icon_path = '../resources/icons/sun.svg#dark-mode';
-const light_theme_icon_path = '../resources/icons/night.svg#light-mode';
+const dark_theme_icon_path = 'resources/icons/sun.svg#dark-mode';
+const light_theme_icon_path = 'resources/icons/night.svg#light-mode';
 
 function setThemeOnLoad() {
     const localTheme = localStorage.getItem("preferred-theme");

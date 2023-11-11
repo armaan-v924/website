@@ -18,6 +18,8 @@ let greeting = $('#greeting');
 let page_control = $('.page-controller');
 
 const greeting_text = 'Hi! I\'m <span id="name">Armaan</span>,';
+const dark_theme_icon_path = '../resources/icons/sun.svg#dark-mode';
+const light_theme_icon_path = '../resources/icons/night.svg#light-mode';
 
 function setThemeOnLoad() {
     const localTheme = localStorage.getItem("preferred-theme");
@@ -29,7 +31,7 @@ function setThemeOnLoad() {
 function setTheme(theme) {
     currentTheme = theme;
     html_tag.attr('data-theme', theme);
-    switch_theme_icon.children().attr('xlink:href', theme === 'dark' ? 'resources/icons/sun.svg#dark-mode' : 'resources/icons/night.svg#light-mode');
+    switch_theme_icon.children().attr('xlink:href', theme === 'dark' ? dark_theme_icon_path : light_theme_icon_path);
 }
 
 function toggleTheme() {
@@ -103,7 +105,9 @@ $(function () {
     prepareJavaScript();
     setThemeOnLoad();
     if(sessionStorage.getItem('animationPlayed') === null) {
-        typeAnimation(greeting_text);
+        if(greeting.parent().hasClass('typewriter')) {
+            typeAnimation(greeting_text);
+        }
     }
     switch_theme_button.click(function () {
         toggleTheme();

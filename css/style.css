@@ -262,13 +262,9 @@ body {
 #resume-download .icon {
     margin-right: 0.5rem;
 }
-#replay-animation {
-    /* font-size: var(--standard-text); */
-    margin-right: 1rem;
-    margin-left: 0.5rem;
-}
 #page-control .icon {
     transition: all 0.2s ease-in-out;
+    margin-right: 1rem;
 }
 #page-control .icon:hover {
     transform: scale(1.1);

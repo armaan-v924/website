@@ -2,20 +2,20 @@ let currentTheme;
 
 const systemSettingIsDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-let html_tag = $('html');
+const html_tag = $('html');
 
-let switch_theme_button = $('#switch-theme');
-let switch_theme_icon = $('#switch-theme-icon');
+const switch_theme_button = $('#switch-theme');
+const switch_theme_icon = $('#switch-theme-icon');
 
-let cursor = $('#cursor');
-let replay_button = $('#replay-animation');
-let intro = $('.intro');
-let bio = $('.bio');
-let socials = $('.socials');
-let footer = $('.footer');
-let banner = $('.banner');
-let greeting = $('#greeting');
-let page_control = $('.page-controller');
+const cursor = $('#cursor');
+const replay_button = $('#replay-animation');
+const intro = $('.intro');
+const bio = $('.bio');
+const socials = $('.socials');
+const footer = $('.footer');
+const banner = $('.banner');
+const greeting = $('#greeting');
+const page_control = $('.page-controller');
 
 const greeting_text = 'Hi! I\'m <span id="name">Armaan</span>,';
 const dark_theme_icon_path = 'resources/icons/sun.svg#dark-mode';
